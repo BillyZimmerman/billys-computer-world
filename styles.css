@@ -24,9 +24,35 @@ section h2 {
   color: #122634; /* Dark blue from the palette */
 }
 
+/* Background Color Schemes */
+.color-1 {
+  background: linear-gradient(135deg, #132534 0%, #02393a 100%);
+  color: #fff !important;
+  position: relative;
+  background-image: url("assets/img/trees2.jpg");
+  background-position: center bottom; /* Show more of the tree tops */
+  background-attachment: fixed;
+  /* background: linear-gradient(90deg, #112734 0%, #043739 100%); */
+}
+.color-1 h2 {
+  color: #f3d24f; /* Yellow from the palette */
+}
+
+.color-2 {
+  background: #fcfcfc;
+}
+
+.color-3 {
+  background: linear-gradient(90deg, #132534 0%, #02393a 100%) !important;
+}
+
+.color-3 h2 {
+  color: #f3d24f;
+}
+
 /* Header */
 header {
-  background: linear-gradient(135deg, #132534 0%, #02393a 100%);
+  background: linear-gradient(90deg, #132534 0%, #02393a 100%);
   color: white;
   padding: 100px 20px 60px;
 }
@@ -136,8 +162,8 @@ header h1 {
 }
 .cta-button {
   display: inline-block;
-  background: #d79a1f; /* Coral red from the palette */
-  color: white;
+  background: #f3d24f;
+  color: #122634;
   padding: 12px 24px;
   border-radius: 30px;
   text-decoration: none;
@@ -146,15 +172,13 @@ header h1 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .cta-button:hover {
-  background: #549a83; /* Darker coral red for hover */
+  background: #549a83;
   transform: translateY(-2px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Main Content container styles - UPDATED WITH 70% WIDTH */
 .page-width {
-  padding: 1rem;
-  max-width: 95%; /* Set maximum width to 70% on larger screens */
   margin: 0 auto; /* Center the content */
 }
 
@@ -188,15 +212,14 @@ header h1 {
 .sub-banner-container {
   position: relative;
   overflow: hidden;
-  padding: 0 12px;
+  /* padding: 0 12px; */
   z-index: 1;
   background-color: transparent;
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.03);
 }
 
 /* Remove background from sections inside the container */
-.sub-banner-container .flip-card-section,
-.sub-banner-container .process-section {
+.sub-banner-container .flip-card-section {
   background-color: transparent;
   padding-bottom: 40px; /* Reduce bottom padding */
 }
@@ -318,9 +341,9 @@ header h1 {
 }
 
 /* Process Section */
-.process-section {
-  background: transparent;
-}
+/* .process-section {
+  background: red;
+} */
 
 .process-steps {
   display: flex;
@@ -633,7 +656,11 @@ header h1 {
 
 /* Contact */
 .contact {
-  background: linear-gradient(90deg, #112734 0%, #043739 100%);
+  position: relative;
+  background-image: url("assets/img/trees2.jpg");
+  background-position: center bottom; /* Show more of the tree tops */
+  background-attachment: fixed;
+  /* background: linear-gradient(90deg, #112734 0%, #043739 100%); */
   color: white;
   text-align: center;
 }
@@ -703,8 +730,8 @@ textarea {
 }
 
 .submit-button {
-  background: #d79a1f; /* Coral red from the palette */
-  color: white;
+  background: #f3d24f;
+  color: #122634;
   border: none;
   border-radius: 30px;
   padding: 12px 24px;
@@ -788,7 +815,7 @@ textarea {
 
 /* Footer */
 footer {
-  background: rgb(13 13 22);
+  background: #000;
   color: white;
   text-align: center;
   padding: 30px 20px;
