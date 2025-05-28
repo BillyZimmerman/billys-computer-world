@@ -151,9 +151,37 @@ header h1 {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Main Content container styles */
+/* Main Content container styles - UPDATED WITH 70% WIDTH */
 .page-width {
   padding: 1rem;
+  max-width: 95%; /* Set maximum width to 70% on larger screens */
+  margin: 0 auto; /* Center the content */
+}
+
+/* Responsive adjustments for page-width */
+@media (max-width: 1200px) {
+  .page-width {
+    max-width: 80%; /* Slightly wider on medium-large screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .page-width {
+    max-width: 90%; /* Even wider on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .page-width {
+    max-width: 100%; /* Full width on mobile and tablet */
+    padding: 0.5rem; /* Reduce padding on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .page-width {
+    padding: 0.25rem; /* Even less padding on very small screens */
+  }
 }
 
 /* Sub-banner container styles */
@@ -200,7 +228,7 @@ header h1 {
   text-align: center;
 }
 
-.body{
+.body {
   padding: 0 50px;
   text-align: center;
 }
@@ -687,14 +715,14 @@ textarea {
 }
 
 .submit-button:hover {
-  background: #549B82; /* Darker coral red for hover */
+  background: #549b82; /* Darker coral red for hover */
   transform: translateY(-2px);
 }
 
 .cta-button:focus,
 .submit-button:focus,
 .project-link:focus {
-  outline: 2px solid #549B82
+  outline: 2px solid #549b82;
   outline-offset: 2px;
 }
 
@@ -976,7 +1004,7 @@ footer p {
   border: 1px solid rgba(114, 177, 168, 0.3);
 }
 
-/* Responsive Adjustments */
+/* Existing responsive adjustments */
 @media (max-width: 1100px) {
   .about-me-container {
     margin: 0 20px 35px; /* Slightly smaller margins on medium screens */
