@@ -88,3 +88,147 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", handleScroll);
   handleScroll(); // Check on page load
 });
+
+// Recent Project - pop up functionality
+// Sample project data - replace with your actual projects
+const projects = [
+  {
+    name: "Perry's Steakhouse Online Market",
+    description: "E-commerce platform for gourmet food and gifts",
+    url: "",
+    image: "assets/img/perrys.webp",
+  },
+  {
+    name: "Michael Franti",
+    description: "Artist website with music and merchandise store",
+    url: "https://soulrockerfam.com/",
+    image: "assets/img/MF.jpg",
+  },
+  {
+    name: "Dermafladge",
+    description: "Ethical jewelry e-commerce platform",
+    url: "https://www.dermaflage.com/",
+    image: "assets/img/ND.jpeg",
+  },
+  {
+    name: "Willie Nelson",
+    description: "Nostalgic event website with ticket sales",
+    url: "https://willienelson.com/",
+    image: "assets/img/WN.jpg",
+  },
+  {
+    name: "Jelly Roll",
+    description: "Local dining establishment with online reservations",
+    url: "https://example.com/mountain-view",
+    image: "assets/img/jelly.webp",
+  },
+  {
+    name: "311",
+    description: "Auto service shop with appointment booking",
+    url: "https://example.com/auto-repair",
+    image: "assets/img/311.webp",
+  },
+  {
+    name: "Sleeping With Sirens",
+    description: "Dental practice with patient portal integration",
+    url: "https://sirensmusic.co/",
+    image: "assets/img/sirens.jpg",
+  },
+  {
+    name: "The Moody Blues",
+    description: "Tourism company with booking system",
+    url: "https://www.moodybluestoday.com/",
+    image: "assets/img/MB.webp",
+  },
+  {
+    name: "RunGum",
+    description: "Local brewery with event calendar",
+    url: "https://rungum.com/",
+    image: "assets/img/RG.webp",
+  },
+  {
+    name: "Black Sabbath UK shop",
+    description: "Gym membership and class scheduling platform",
+    url: "https://uk.blacksabbathapparelshop.com/",
+    image: "assets/img/BS.png",
+  },
+  {
+    name: "CMA Fest",
+    description: "Law firm website with consultation forms",
+    url: "https://shop.cmaworld.com",
+    image: "assets/img/cma.webp",
+  },
+  {
+    name: "Fail Army",
+    description: "Property listings with virtual tour integration",
+    url: "https://www.failarmy.com/",
+    image: "assets/img/FA.png",
+  },
+];
+
+// DOM elements
+const viewAllBtn = document.getElementById("viewAllBtn");
+const popupOverlay = document.getElementById("popupOverlay");
+const closeBtn = document.getElementById("closeBtn");
+const projectGrid = document.getElementById("projectGrid");
+
+// Generate project grid
+function generateProjectGrid() {
+  projectGrid.innerHTML = "";
+  projects.forEach((project, index) => {
+    const projectItem = document.createElement("a");
+    projectItem.className = "project-item";
+    projectItem.href = project.url;
+    projectItem.target = "_blank";
+    projectItem.rel = "noopener noreferrer";
+
+    projectItem.innerHTML = `
+            <div class="project-item-image" style="background-image: url('${project.image}')">
+            </div>
+            <div class="project-item-content">
+              <h3>${project.name}</h3>
+              <p>${project.description}</p>
+            </div>
+          `;
+
+    projectGrid.appendChild(projectItem);
+  });
+}
+
+// Open popup
+function openPopup() {
+  generateProjectGrid();
+  popupOverlay.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+// Close popup
+function closePopup() {
+  popupOverlay.classList.remove("active");
+  document.body.style.overflow = "auto";
+}
+
+// Event listeners
+viewAllBtn.addEventListener("click", openPopup);
+closeBtn.addEventListener("click", closePopup);
+
+// Close popup when clicking outside content
+popupOverlay.addEventListener("click", (e) => {
+  if (e.target === popupOverlay) {
+    closePopup();
+  }
+});
+
+// Close popup with Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && popupOverlay.classList.contains("active")) {
+    closePopup();
+  }
+});
+
+// Prevent body scroll when popup is open
+window.addEventListener("resize", () => {
+  if (popupOverlay.classList.contains("active")) {
+    document.body.style.overflow = "hidden";
+  }
+});
