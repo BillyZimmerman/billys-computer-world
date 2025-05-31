@@ -93,74 +93,63 @@ document.addEventListener("DOMContentLoaded", function () {
 // Sample project data - replace with your actual projects
 const projects = [
   {
-    name: "Perry's Steakhouse Online Market",
-    description: "E-commerce platform for gourmet food and gifts",
-    url: "",
-    image: "assets/img/perrys.webp",
+    name: "Merch Mountain",
+    url: "https://www.merchmountain.com/",
+    image: "assets/img/MM.webp",
   },
   {
     name: "Michael Franti",
-    description: "Artist website with music and merchandise store",
     url: "https://soulrockerfam.com/",
     image: "assets/img/MF.jpg",
   },
   {
-    name: "Dermafladge",
-    description: "Ethical jewelry e-commerce platform",
-    url: "https://www.dermaflage.com/",
-    image: "assets/img/ND.jpeg",
+    name: "Megadeth",
+    url: "https://www.megadeth.com/",
+    image: "assets/img/MD.jpg",
   },
   {
     name: "Willie Nelson",
-    description: "Nostalgic event website with ticket sales",
     url: "https://willienelson.com/",
     image: "assets/img/WN.jpg",
   },
   {
     name: "Jelly Roll",
-    description: "Local dining establishment with online reservations",
+
     url: "https://example.com/mountain-view",
     image: "assets/img/jelly.webp",
   },
   {
     name: "311",
-    description: "Auto service shop with appointment booking",
     url: "https://example.com/auto-repair",
     image: "assets/img/311.webp",
   },
   {
     name: "Sleeping With Sirens",
-    description: "Dental practice with patient portal integration",
     url: "https://sirensmusic.co/",
     image: "assets/img/sirens.jpg",
   },
   {
     name: "The Moody Blues",
-    description: "Tourism company with booking system",
     url: "https://www.moodybluestoday.com/",
     image: "assets/img/MB.webp",
   },
   {
     name: "RunGum",
-    description: "Local brewery with event calendar",
     url: "https://rungum.com/",
     image: "assets/img/RG.webp",
   },
   {
     name: "Black Sabbath UK shop",
-    description: "Gym membership and class scheduling platform",
     url: "https://uk.blacksabbathapparelshop.com/",
     image: "assets/img/BS.png",
   },
   {
     name: "CMA Fest",
-    description: "Law firm website with consultation forms",
     url: "https://shop.cmaworld.com",
     image: "assets/img/cma.webp",
   },
   {
     name: "Fail Army",
-    description: "Property listings with virtual tour integration",
     url: "https://www.failarmy.com/",
     image: "assets/img/FA.png",
   },
@@ -187,7 +176,6 @@ function generateProjectGrid() {
             </div>
             <div class="project-item-content">
               <h3>${project.name}</h3>
-              <p>${project.description}</p>
             </div>
           `;
 
@@ -231,4 +219,62 @@ window.addEventListener("resize", () => {
   if (popupOverlay.classList.contains("active")) {
     document.body.style.overflow = "hidden";
   }
+});
+
+// TEXT TICKER JS ====================================================================
+// JavaScript to ensure seamless scrolling and handle hover pause
+document.addEventListener("DOMContentLoaded", function () {
+  const tickerContainer = document.querySelector(".pricing-ticker-container");
+  const tickerWrapper = document.querySelector(".ticker-wrapper");
+  const textTicker = document.querySelector(".text-ticker");
+
+  // Function to adjust animation speed based on text length and screen size
+  function adjustTickerSpeed() {
+    const containerWidth = tickerContainer.offsetWidth;
+    const textWidth = textTicker.offsetWidth;
+    const screenWidth = window.innerWidth;
+
+    // Calculate duration based on text length and screen size
+    let baseDuration = 60; // seconds
+
+    if (screenWidth <= 480) {
+      baseDuration = 35;
+    } else if (screenWidth <= 768) {
+      baseDuration = 45;
+    }
+
+    // Adjust duration based on text length
+    const ratio = textWidth / containerWidth;
+    const adjustedDuration = Math.max(baseDuration * Math.min(ratio, 2), 20);
+
+    tickerWrapper.style.animationDuration = adjustedDuration + "s";
+  }
+
+  // Hover pause functionality
+  function pauseTicker() {
+    tickerWrapper.style.animationPlayState = "paused";
+  }
+
+  function resumeTicker() {
+    tickerWrapper.style.animationPlayState = "running";
+  }
+
+  // Add hover event listeners
+  tickerContainer.addEventListener("mouseenter", pauseTicker);
+  tickerContainer.addEventListener("mouseleave", resumeTicker);
+
+  // Add touch events for mobile devices
+  tickerContainer.addEventListener("touchstart", pauseTicker);
+  tickerContainer.addEventListener("touchend", resumeTicker);
+
+  // Initial adjustment
+  adjustTickerSpeed();
+
+  // Adjust on window resize
+  window.addEventListener("resize", adjustTickerSpeed);
+
+  // Optional: Add smooth start after page load
+  setTimeout(() => {
+    tickerWrapper.style.animationPlayState = "running";
+  }, 100);
 });
