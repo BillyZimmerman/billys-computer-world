@@ -13,20 +13,7 @@ body {
 /* Responsive adjustments for page-width */
 @media (max-width: 1200px) {
   .page-width {
-    max-width: 80%;
-  }
-}
-
-@media (max-width: 992px) {
-  .page-width {
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 768px) {
-  .page-width {
-    max-width: 100%; /* Full width on mobile and tablet */
-    padding: 0.5rem; /* Reduce padding on smaller screens */
+    max-width: 100%;
   }
 }
 
@@ -59,6 +46,12 @@ section h2 {
   margin: 0 auto 24px auto;
   padding: 0 50px;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .body {
+    padding: 0 12px;
+  }
 }
 
 /* Responsive Design ================================================= */
@@ -435,7 +428,7 @@ header h1 {
   display: block;
 }
 
-/* Flip Cards - UPDATED FOR SINGLE ROW */
+/* Flip Cards - ============================================================================== */
 .flip-card-section {
   background-color: transparent;
   text-align: center;
@@ -457,7 +450,7 @@ header h1 {
 .about-me-container {
   perspective: 1000px;
   width: 280px; /* Reduced from 320px for better fit */
-  height: 310px;
+  height: 350px;
   flex: 0 0 280px; /* Don't grow or shrink, stay at 280px */
 }
 
@@ -484,7 +477,7 @@ header h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 12px;
   border-radius: 12px;
   box-sizing: border-box;
 }
@@ -524,6 +517,168 @@ header h1 {
   margin: 0;
   font-size: 1rem;
   line-height: 1.6;
+}
+
+/* Slider Styles for 1024px and below */
+@media (max-width: 1024px) {
+  .flip-card-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .cards-container {
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .about-me-container {
+    flex: 0 0 300px;
+    height: 280px;
+  }
+
+  .slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .nav-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: scale(1);
+  }
+
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .dot.active {
+    background: white;
+    transform: scale(1.2);
+  }
+}
+
+/* Mobile Styles - Show one card with peek of next */
+@media (max-width: 768px) {
+  .flip-card-section {
+    padding: 20px 10px;
+  }
+
+  .flip-card-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .cards-container {
+    gap: 15px;
+    padding: 0 15px;
+  }
+
+  .about-me-container {
+    flex: 0 0 calc(100vw - 80px);
+    height: 250px;
+  }
+
+  .front,
+  .back {
+    padding: 20px;
+  }
+
+  .front i {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .front h3 {
+    font-size: 1.3rem;
+  }
+
+  .back p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .nav-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
+  .slider-nav {
+    margin-top: 20px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .about-me-container {
+    flex: 0 0 calc(100vw - 60px);
+    height: 220px;
+  }
+
+  .cards-container {
+    padding: 0 10px;
+  }
+
+  .front,
+  .back {
+    padding: 15px;
+  }
+
+  .front i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .front h3 {
+    font-size: 1.2rem;
+  }
+
+  .back p {
+    font-size: 0.85rem;
+  }
 }
 
 .process-steps {
@@ -812,7 +967,7 @@ header h1 {
 
 .skill-badges span i {
   margin-right: 5px;
-  color: #e05e54; /* Coral red from the palette */
+  color: #e05e54;
 }
 
 /* Services =======================================================================*/
@@ -820,7 +975,8 @@ header h1 {
   background: #f0f4f8;
 }
 
-.service-cards {
+.service-cards,
+.cards {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -899,30 +1055,6 @@ header h1 {
   .text-ticker {
     font-size: 1.2rem;
   }
-}
-
-/* Pause animation on hover */
-.pricing-ticker-container:hover .ticker-wrapper {
-  animation-play-state: paused;
-}
-
-/* PRICING DETAILS =================================================*/
-.pricing-details-text {
-  color: #f3d24f;
-}
-
-/* Footer =================================================*/
-footer {
-  background: #000;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 1.2rem;
-  border-top: solid 2px #f3d24f;
-}
-
-footer p {
-  margin: 5px 0;
 }
 
 /* Animation styles for process steps */
@@ -1094,7 +1226,7 @@ header {
   line-height: 1.6;
 }
 
-/* Projects Section */
+/* Projects Section ==========================================================================================*/
 .projects {
   background: linear-gradient(135deg, #132534 0%, #02393a 100%);
   color: #fff !important;
@@ -1273,7 +1405,7 @@ header {
   padding: 30px;
 }
 
-/* Project Grid */
+/* Project Grid ========================================================================*/
 .project-grid {
   display: grid;
   gap: 25px;
@@ -1345,4 +1477,34 @@ header {
   font-size: 0.9rem;
   color: #666;
   line-height: 1.4;
+}
+
+/* PRICING DETAILS =================================================*/
+.pricing-details-text {
+  color: #f3d24f;
+}
+
+ol {
+  padding: 0;
+}
+
+/* Footer =========================================================================*/
+footer {
+  background: #000;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 1.2rem;
+  border-top: solid 2px #f3d24f;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 15px 10px;
+    font-size: 12px;
+  }
 }

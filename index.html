@@ -39,82 +39,88 @@
     <div class="page-width">
       <div class="sub-banner-container gradient-linear gradient-subtle">
         <section class="flip-card-section color-2">
-          <h2>How I Can Help Your Business</h2>
-          <div class="cards-container">
-            <div class="about-me-container">
-              <div class="card">
-                <div class="front">
-                  <i class="fas fa-user"></i>
-                  <h3>About Me</h3>
+        <h2>How I Can Help Your Business</h2>
+        <div class="slider-container">
+            <div class="cards-container" id="cardsContainer">
+                <div class="about-me-container">
+                    <div class="card">
+                        <div class="front">
+                            <i class="fas fa-user"></i>
+                            <h3>About Me</h3>
+                        </div>
+                        <div class="back">
+                            <p>
+                                Hello, I'm Billy Zimmerman, a web developer with 5+ years of experience specializing in building high-quality websites for artists and brands worldwide. Through my full-time work, I've honed my skills in creating functional, visually appealing sites that perform seamlessly across all devices. I'm now offering freelance services to help more businesses establish their strong online presence and achieve their digital goals.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="back">
-                  <p>
-                    Hello, my name is Billy Zimmerman, with 5+ years of
-                    experience, my full time job is working on shops for artists
-                    and brands all around the world. I am starting this side
-                    business because honestly, I need more money and enjoy
-                    making websites so it makes sense to me.
-                  </p>
+
+                <div class="about-me-container">
+                    <div class="card">
+                        <div class="front">
+                            <i class="fa-solid fa-dumbbell"></i>                  
+                            <h3>Billy's Strengths</h3>
+                        </div>
+                        <div class="back">
+                            <p>
+                                As a full-time front-end developer, I specialize in Shopify development with extensive experience building hundreds of stores over the past two years. While I can work with other platforms including Big Cartel and Wix, my deep Shopify expertise allows me to deliver best results and service for clients using that platform.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
+
+                <div class="about-me-container">
+                    <div class="card">
+                        <div class="front">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>How I Could Help</h3>
+                        </div>
+                        <div class="back">
+                            <p>
+                                I specialize in building websites on the Shopify e-commerce platform. Whether you need a brand new site, a redesign of your current one, or specific improvements like mobile optimization, I can deliver solutions that help your business grow and look good!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-me-container">
+                    <div class="card">
+                        <div class="front">
+                            <i class="fa-solid fa-question"></i>
+                            <h3>Why Did I Contact You</h3>
+                        </div>
+                        <div class="back">
+                            <p>
+                                I discovered your shop like I do anything else, with a google search. You may need a website or possibly a update to your current site.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="about-me-container">
-              <div class="card">
-                <div class="front">
-                  <i class="fas fa-lightbulb"></i>
-                  <h3>How I Could Help</h3>
-                </div>
-                <div class="back">
-                  <p>
-                    I specialize in building websites on the Shopify e-commerce
-                    platform. Whether you need a brand new site, a redesign of
-                    your current one, or specific improvements like mobile
-                    optimization, I can deliver solutions that help your
-                    business grow and look good!
-                  </p>
-                </div>
-              </div>
+
+            <!-- Navigation (only visible on tablet/mobile) -->
+            <div class="slider-nav" id="sliderNav" style="display: none;">
+                <button class="nav-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
-            <div class="about-me-container">
-              <div class="card">
-                <div class="front">
-                  <i class="fa-solid fa-question"></i>
-                  <h3>Why Did I Contact You</h3>
-                </div>
-                <div class="back">
-                  <p>
-                    I discovered your shop like I do anything else, with a
-                    google search. You may need a website or possibly a update
-                    to your current site.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="about-me-container">
-              <div class="card">
-                <div class="front">
-                  <i class="fa-solid fa-question"></i>
-                  <h3>Why Did I Contact You</h3>
-                </div>
-                <div class="back">
-                  <p>
-                    I discovered your shop like I do anything else, with a
-                    google search. You may need a website or possibly a update
-                    to your current site.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
+            <!-- Dots indicator -->
+            <div class="slider-dots" id="sliderDots" style="display: none;"></div>
+        </div>
+    </section>
 
         <section class="process-section color-1">
           <h2>My Process</h2>
           <p class="body">
             I am just getting started in my side business for building websites,
-            in full transparency I want to be clear I have years of experience
+            in full transparency I want to be honest and
             working full time in web development but this will be the first time
-            I have done freelance work, I have been building shops on wix and
+            I have done freelance work, I have 2+ years working for a company that host and maintains over 1,000 shopify stores, I am fortunate to have this job and really appreciate the variety it provides. I have been building shops on wix and
             shopify for over 10 years now.
           </p>
           <div class="process-steps">
@@ -153,9 +159,10 @@
           </div>
         </section>
 
-        <section class="flip-card-section color-2">
-          <h2>Pricing</h2>
-          <p class="body">
+        <section class="  cards color-2">
+        <h2>Pricing</h2>
+        <div class="cards" >
+  <p class="body">
             Before we start working together it is important to map out the
             scope and request you may have for your website, with a free 15
             minute consultation we could start to outline the specifics of what
@@ -196,10 +203,12 @@
               </p>
             </div>
           </div>
+        </div>
         </section>
 
       <section class="projects color-1" id="projects">
       <h2>Recent Projects & Builds</h2>
+      
       <p class="body project-body">
        At my day job I have the honor to work on some some sites for big brands and bands from around the world, My hand in these builds varies from full build to contributing to specific pages, features or sections. I am not the designer and I did not set up the products, my role is to take the designs and make them a reality, I am not the owner of these sites but I have worked on them and can provide references if needed.
       <div class="project-container">
@@ -421,7 +430,7 @@
 
         <section class="services color-1">
           <h2>Services for Great Falls Businesses</h2>
-          <div class="service-cards">
+          <div class="service-cards cards">
             <div class="service-card">
               <i class="fas fa-laptop-code"></i>
               <h3>Website Design & Development</h3>
@@ -448,7 +457,7 @@
       <div>
             <div class="pricing-ticker-container">
                 <div class="ticker-wrapper">
-                    <h2 class="text-ticker">Big discounts for 1st Three Clients • Special Offers Available • Limited Time Only • Contact Billy Today • Pricing Details Below • Special Offers Available • Free 15 Minute Consultation • Big discounts for 1st Three Clients • Special Offers Available • Limited Time Only • Contact Billy Today • Pricing Details Below • Special Offers Available • Free 15 Minute Consultation Big discounts for 1st Three Clients • Special Offers Available • Limited Time Only • Contact Billy Today • Pricing Details Below • Special Offers Available • Free 15 Minute Consultation • Big discounts for 1st Three Clients • Special Offers Available • Limited Time Only • Contact Billy Today • Pricing Details Below • Special Offers Available • Free 15 Minute Consultation Big discounts for 1st Three Clients • Special Offers Available • Limited Time Only • Contact Billy Today • Pricing Details Below • Special Offers Available • Free 15 Minute Consultation • Big discounts for 1st Three Clients • Special Offers Available • Limited Time Only • Contact Billy Today • Pricing Details Below • Special Offers Available • Free 15 Minute Consultation</h2>
+                    <h2 class="text-ticker">Big discounts for 1st Three Clients • Special Offers Available • Limited Time Only • Contact Billy Today • Pricing Details Below • Special Offers Available • Free 15 Minute Consultation • Big discounts for 1st Three Clients • Special Offers Available • Limited Time Only • Contact Billy Today • Pricing Details Below • Special Offers Available • Free 15 Minute Consultation • Big discounts for 1st Three Clients • Limited Time Only • Contact Billy Today • Pricing Details Below • Special Offers Available • Free 15 Minute Consultation • Big discounts for 1st Three Clients • Let's Work together • Limited Time Only • Contact Billy Today • Pricing Details Below • Special Offers Available • Free 15 Minute Consultation Big discounts for 1st Three Clients • Special Offers Available • Limited Time Only • Contact Billy Today • Pricing Details Below • Special Offers Available • Free 15 Minute Consultation • Big discounts for 1st Three Clients • I Can Make You a Nice Website :) • Limited Time Only • Contact Billy Today • Pricing Details Below • Special Offers Available • Free 15 Minute Consultation</h2>
                 </div>
             </div>
       </div>

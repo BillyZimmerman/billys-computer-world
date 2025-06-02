@@ -8,6 +8,160 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // FLIP CARDS SLIDER JS ============================================================
+  class FlipCardSlider {
+    constructor() {
+      this.container = document.getElementById("cardsContainer");
+      this.prevBtn = document.getElementById("prevBtn");
+      this.nextBtn = document.getElementById("nextBtn");
+      this.sliderNav = document.getElementById("sliderNav");
+      this.sliderDots = document.getElementById("sliderDots");
+      this.cards = document.querySelectorAll(".about-me-container");
+      this.currentIndex = 0;
+      this.isSliderMode = false;
+
+      this.init();
+    }
+
+    init() {
+      this.checkScreenSize();
+      this.createDots();
+      this.bindEvents();
+      window.addEventListener("resize", () => this.checkScreenSize());
+    }
+
+    checkScreenSize() {
+      const wasSliderMode = this.isSliderMode;
+      this.isSliderMode = window.innerWidth <= 1024;
+
+      if (this.isSliderMode !== wasSliderMode) {
+        if (this.isSliderMode) {
+          this.enableSlider();
+        } else {
+          this.disableSlider();
+        }
+      }
+
+      if (this.isSliderMode) {
+        this.updateSlider();
+      }
+    }
+
+    enableSlider() {
+      this.sliderNav.style.display = "flex";
+      this.sliderDots.style.display = "flex";
+      this.currentIndex = 0;
+      this.updateSlider();
+    }
+
+    disableSlider() {
+      this.sliderNav.style.display = "none";
+      this.sliderDots.style.display = "none";
+      this.container.style.transform = "translateX(0)";
+    }
+
+    createDots() {
+      this.sliderDots.innerHTML = "";
+      this.cards.forEach((_, index) => {
+        const dot = document.createElement("div");
+        dot.className = "dot";
+        if (index === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => this.goToSlide(index));
+        this.sliderDots.appendChild(dot);
+      });
+    }
+
+    bindEvents() {
+      this.prevBtn.addEventListener("click", () => this.prevSlide());
+      this.nextBtn.addEventListener("click", () => this.nextSlide());
+
+      // Touch events for mobile swiping
+      let startX, startY, distX, distY;
+
+      this.container.addEventListener("touchstart", (e) => {
+        if (!this.isSliderMode) return;
+        startX = e.touches[0].pageX;
+        startY = e.touches[0].pageY;
+      });
+
+      this.container.addEventListener("touchmove", (e) => {
+        if (!this.isSliderMode) return;
+        e.preventDefault();
+      });
+
+      this.container.addEventListener("touchend", (e) => {
+        if (!this.isSliderMode) return;
+        distX = e.changedTouches[0].pageX - startX;
+        distY = e.changedTouches[0].pageY - startY;
+
+        // Check if horizontal swipe is more significant than vertical
+        if (Math.abs(distX) > Math.abs(distY) && Math.abs(distX) > 50) {
+          if (distX > 0) {
+            this.prevSlide();
+          } else {
+            this.nextSlide();
+          }
+        }
+      });
+    }
+
+    updateSlider() {
+      if (!this.isSliderMode) return;
+
+      const isMobile = window.innerWidth <= 768;
+      let cardWidth, offset;
+
+      if (isMobile) {
+        // On mobile, show one card with peek of next
+        cardWidth = this.cards[0].offsetWidth + 15; // card width + gap
+        offset = -this.currentIndex * cardWidth;
+      } else {
+        // On tablet, show 2-3 cards
+        cardWidth = this.cards[0].offsetWidth + 20; // card width + gap
+        offset = -this.currentIndex * cardWidth;
+      }
+
+      this.container.style.transform = `translateX(${offset}px)`;
+      this.updateDots();
+      this.updateNavButtons();
+    }
+
+    updateDots() {
+      document.querySelectorAll(".dot").forEach((dot, index) => {
+        dot.classList.toggle("active", index === this.currentIndex);
+      });
+    }
+
+    updateNavButtons() {
+      this.prevBtn.disabled = this.currentIndex === 0;
+      this.nextBtn.disabled = this.currentIndex >= this.cards.length - 1;
+    }
+
+    prevSlide() {
+      if (this.currentIndex > 0) {
+        this.currentIndex--;
+        this.updateSlider();
+      }
+    }
+
+    nextSlide() {
+      if (this.currentIndex < this.cards.length - 1) {
+        this.currentIndex++;
+        this.updateSlider();
+      }
+    }
+
+    goToSlide(index) {
+      this.currentIndex = index;
+      this.updateSlider();
+    }
+  }
+
+  // Initialize the slider when DOM is loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    new FlipCardSlider();
+  });
+
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
