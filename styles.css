@@ -22,9 +22,9 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
-  font-family: "Merriweather", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 section {
@@ -62,7 +62,7 @@ section h2 {
   text-align: center;
 }
 
-/* Color Schemes */
+/* Color Schemes ========================================================================================= */
 .color-1 {
   background: linear-gradient(135deg, #132534 0%, #02393a 100%);
   color: #fff !important;
@@ -120,34 +120,6 @@ section h2 {
 
 .color-6 {
   color: #122434;
-}
-
-/* Local business emphasis =======================================================*/
-.local-highlight {
-  position: relative;
-  display: inline-block;
-}
-
-.local-highlight::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #f3d24f;
-  border-radius: 1.5px;
-}
-
-.location-badge {
-  display: inline-block;
-  background-color: rgba(114, 177, 168, 0.15);
-  color: #2a5579;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  margin-left: 0.5rem;
-  border: 1px solid rgba(114, 177, 168, 0.3);
 }
 
 /* ============================================================================
@@ -249,7 +221,7 @@ header h1 {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* ============================================================================
+/* ===================================        =========================================
    NAVIGATION SECTION
    ============================================================================ */
 
@@ -320,9 +292,91 @@ header h1 {
 .nav-menu.mobile-open {
   display: flex;
 }
+@media (min-width: 1024px) {
+  .nav-link {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 10px 15px;
+  }
+}
+@media (max-width: 700px) {
+  .nav-menu {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+}
+
+/* Slider Navigation */
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.slider-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: scale(1);
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.2);
+}
 
 /* ============================================================================
-   SUB-BANNER CONTAINER
+      HOW I CAN HELP YOUR BUSINESS SECTION
    ============================================================================ */
 
 .sub-banner-container {
@@ -376,7 +430,7 @@ header h1 {
 }
 
 /* ============================================================================
-   FLIP CARDS SECTION
+   HOW I CAN HELP YOUR BUSINESS SECTION
    ============================================================================ */
 
 .flip-card-section {
@@ -468,68 +522,6 @@ header h1 {
   line-height: 1.6;
 }
 
-/* Slider Navigation */
-.slider-container {
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto;
-}
-
-.slider-nav {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 30px;
-}
-
-.nav-btn {
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.nav-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
-}
-
-.nav-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: scale(1);
-}
-
-.slider-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.dot.active {
-  background: white;
-  transform: scale(1.2);
-}
-
 /* ============================================================================
    PROCESS SECTION
    ============================================================================ */
@@ -585,6 +577,24 @@ header h1 {
 .process-step.animated {
   opacity: 1 !important;
   transform: translateY(0) !important;
+}
+
+/* price */
+
+/* ============================================================================
+   MY DAY JOB DETAILS SECTION
+   ============================================================================ */
+.job-details {
+}
+
+.day-job-body {
+  max-width: 100%;
+  border-radius: 0 !important;
+}
+
+p.day-job {
+  margin-bottom: 0;
+  padding-bottom: 12px;
 }
 
 /* ============================================================================
@@ -730,9 +740,7 @@ header h1 {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* ============================================================================
-   POPUP OVERLAY & CONTENT
-   ============================================================================ */
+/* ============================================================= POPUP OVERLAY & CONTENT  =============== */
 
 .popup-overlay {
   position: fixed;
@@ -887,56 +895,7 @@ header h1 {
   line-height: 1.4;
 }
 
-/*  */
-
-/* ============================================================================
-   SKILLS SECTION
-   ============================================================================ */
-
-.skills-section {
-  background: white;
-}
-
-.skill-categories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
-}
-
-.skill-category {
-  min-width: 250px;
-  text-align: center;
-}
-
-.skill-category h3 {
-  color: #2a5579;
-  margin-bottom: 15px;
-}
-
-.skill-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.skill-badges span {
-  background: #f0f4f8;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.skill-badges span i {
-  margin-right: 5px;
-  color: #e05e54;
-}
-
-/* GOALS & EXPECTATIONS ============================== */
+/* GOALS & EXPECTATIONS ============================================================================================== */
 
 #goals-and-expectations {
   width: 100%;
@@ -1185,123 +1144,130 @@ header h1 {
 }
 
 /* ============================================================================
-   MY DAY JOB DETAILS SECTION
-   ============================================================================ */
-.job-details {
-}
-
-.day-job-body {
-  max-width: 100%;
-  border-radius: 0 !important;
-}
-
-p.day-job {
-  margin-bottom: 0;
-  padding-bottom: 12px;
-}
-/* ============================================================================
    CALL TO ACTION / PRICING SECTION
    ============================================================================ */
-
 .call-to-action {
   background: linear-gradient(90deg, #132534 0%, #02393a 100%) !important;
+}
+
+.pricing-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 0;
+  align-items: stretch;
+}
+
+.pricing-section,
+.shopify-section {
+  flex: 1;
+  padding: 40px 30px;
+}
+
+.pricing-section h2,
+.shopify-section h2 {
+  color: #f3d24f;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.section-divider {
+  width: 4px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #f3d24f 20%,
+    #f3d24f 80%,
+    transparent 100%
+  );
+  margin: 40px 0;
+  min-height: 300px;
+  flex-shrink: 0;
 }
 
 .pricing-details-text {
   color: #f3d24f;
 }
 
-.pricing-list {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-ol {
+.pricing-list,
+.shopify-benefits {
+  max-width: 100%;
+  margin: 20px 0;
   padding: 0;
+  list-style: none;
 }
 
-/* ============================================================================
-   TESTIMONIALS SECTION (Currently Commented Out)
-   ============================================================================ */
-
-.testimonials {
-  background: #f0f4f8;
-}
-
-.testimonial-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-.testimonial {
-  background: white;
-  border-radius: 8px;
-  padding: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  max-width: 500px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.testimonial:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.quote {
+.pricing-list li,
+.shopify-benefits li {
+  margin-bottom: 12px;
+  padding-left: 20px;
   position: relative;
+}
+
+.pricing-list li::before,
+.shopify-benefits li::before {
+  content: "•";
+  color: #f3d24f;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+}
+
+.pricing-intro,
+.shopify-intro {
   margin-bottom: 20px;
+  font-size: 1.1em;
 }
 
-.quote i.fa-quote-left {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  color: #e05e54;
-  opacity: 0.3;
-  font-size: 1.5rem;
-}
-
-.quote i.fa-quote-right {
-  position: absolute;
-  bottom: -10px;
-  right: -10px;
-  color: #e05e54;
-  opacity: 0.3;
-  font-size: 1.5rem;
-}
-
-.quote p {
-  margin: 0;
+.pricing-note,
+.shopify-note {
+  margin-top: 20px;
   font-style: italic;
-  padding: 10px;
+  opacity: 0.9;
 }
 
-.author {
-  display: flex;
-  align-items: center;
+/* Tablet and Mobile Responsive */
+@media (max-width: 1023px) {
+  .pricing-container {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .section-divider {
+    width: 100%;
+    height: 4px;
+    margin: 20px 0;
+    min-height: auto;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      #f3d24f 20%,
+      #f3d24f 80%,
+      transparent 100%
+    );
+  }
+
+  .pricing-section,
+  .shopify-section {
+    padding: 30px 20px;
+  }
 }
 
-.author-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #72b1a8;
-  margin-right: 15px;
-  background-size: cover;
-  background-position: center;
-}
+@media (max-width: 767px) {
+  .pricing-section h2,
+  .shopify-section h2 {
+    font-size: 1.8rem;
+  }
 
-.author-info h4 {
-  margin: 0;
-  color: #2a5579;
-}
+  .pricing-section,
+  .shopify-section {
+    padding: 25px 15px;
+  }
 
-.author-info p {
-  margin: 5px 0 0;
-  color: #666;
-  font-size: 0.9rem;
+  .body.pricing-details-text {
+    padding: 0 15px;
+  }
 }
 
 /* ============================================================================
@@ -1773,3 +1739,164 @@ footer p {
     font-size: 1.2rem;
   }
 }
+
+/* NOT USING ATM ================================================================================ */
+
+/* Local business emphasis =======================================================*/
+/* .local-highlight {
+  position: relative;
+  display: inline-block;
+}
+
+.local-highlight::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #f3d24f;
+  border-radius: 1.5px;
+}
+
+.location-badge {
+  display: inline-block;
+  background-color: rgba(114, 177, 168, 0.15);
+  color: #2a5579;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+  border: 1px solid rgba(114, 177, 168, 0.3);
+} */
+
+/* ============================================================================
+   TESTIMONIALS SECTION (Currently Commented Out)
+   ============================================================================ */
+
+/* .testimonials {
+  background: #f0f4f8;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.testimonial {
+  background: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  max-width: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.quote {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.quote i.fa-quote-left {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  color: #e05e54;
+  opacity: 0.3;
+  font-size: 1.5rem;
+}
+
+.quote i.fa-quote-right {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  color: #e05e54;
+  opacity: 0.3;
+  font-size: 1.5rem;
+}
+
+.quote p {
+  margin: 0;
+  font-style: italic;
+  padding: 10px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+
+.author-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #72b1a8;
+  margin-right: 15px;
+  background-size: cover;
+  background-position: center;
+}
+
+.author-info h4 {
+  margin: 0;
+  color: #2a5579;
+}
+
+.author-info p {
+  margin: 5px 0 0;
+  color: #666;
+  font-size: 0.9rem;
+} */
+
+/* ============================================================================
+   SKILLS SECTION
+   ============================================================================ */
+
+/* .skills-section {
+  background: white;
+}
+
+.skill-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.skill-category {
+  min-width: 250px;
+  text-align: center;
+}
+
+.skill-category h3 {
+  color: #2a5579;
+  margin-bottom: 15px;
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.skill-badges span {
+  background: #f0f4f8;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.skill-badges span i {
+  margin-right: 5px;
+  color: #e05e54;
+} */
