@@ -89,7 +89,6 @@ section h2 {
 }
 
 .color-4 {
-  background: linear-gradient(135deg, #132534 0%, #02393a 100%);
   color: #fff !important;
   position: relative;
   background-image: url("assets/img/black-bg.png");
@@ -118,8 +117,11 @@ section h2 {
   background: #f3d24f;
 }
 
-.color-6 {
-  color: #122434;
+.white-bg {
+  position: relative;
+  background-image: url("assets/img/computer-bg.png") !important;
+  background-size: cover; /* Add this for better coverage */
+  background-repeat: no-repeat;
 }
 
 /* ============================================================================
