@@ -172,41 +172,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Form submission with basic validation and feedback
-  const auditForm = document.getElementById("audit-form");
-  if (auditForm) {
-    auditForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      // Simple validation
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const business = document.getElementById("business").value;
-
-      if (!name || !email || !business) {
-        alert("Please fill out all required fields.");
-        return;
-      }
-
-      // Normally, you would send this data to your server
-      // For demo purposes, we'll just show a success message
-      auditForm.innerHTML = `
-              <div class="success-message">
-                  <i class="fas fa-check-circle" style="font-size: 3rem; color: #72b1a8; margin-bottom: 1rem;"></i>
-                  <h3>Thank You, ${name}!</h3>
-                  <p>Your website audit request has been submitted. I'll analyze your website and get back to you within 1-2 business days with insights and recommendations.</p>
-                  <p style="margin-top: 1rem;">Meanwhile, feel free to check out my <a href="#projects" style="color: #e05e54;">recent projects</a>.</p>
-              </div>
-          `;
-
-      // Scroll to the success message
-      window.scrollTo({
-        top: auditForm.offsetTop - 100,
-        behavior: "smooth",
-      });
-    });
-  }
-
   // Add animation for the process steps on scroll
   const processSteps = document.querySelectorAll(".process-step");
 
@@ -243,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
   handleScroll(); // Check on page load
 });
 
-// Recent Project - pop up functionality
+// RECENT PROJECT - POP UP FUNCTIONALITY ============================================
 // Sample project data - replace with your actual projects
 const projects = [
   {
@@ -268,7 +233,6 @@ const projects = [
   },
   {
     name: "Jelly Roll",
-
     url: "https://example.com/mountain-view",
     image: "assets/img/jelly.webp",
   },
@@ -432,3 +396,45 @@ document.addEventListener("DOMContentLoaded", function () {
     tickerWrapper.style.animationPlayState = "running";
   }, 100);
 });
+
+/* ============================================================================
+   UNUSED JAVASCRIPT CODE - COMMENTED OUT
+   ============================================================================ */
+
+/* FORM SUBMISSION CODE - Currently not used since contact form is commented out in HTML */
+/*
+// Form submission with basic validation and feedback
+const auditForm = document.getElementById("audit-form");
+if (auditForm) {
+  auditForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Simple validation
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const business = document.getElementById("business").value;
+
+    if (!name || !email || !business) {
+      alert("Please fill out all required fields.");
+      return;
+    }
+
+    // Normally, you would send this data to your server
+    // For demo purposes, we'll just show a success message
+    auditForm.innerHTML = `
+            <div class="success-message">
+                <i class="fas fa-check-circle" style="font-size: 3rem; color: #72b1a8; margin-bottom: 1rem;"></i>
+                <h3>Thank You, ${name}!</h3>
+                <p>Your website audit request has been submitted. I'll analyze your website and get back to you within 1-2 business days with insights and recommendations.</p>
+                <p style="margin-top: 1rem;">Meanwhile, feel free to check out my <a href="#projects" style="color: #e05e54;">recent projects</a>.</p>
+            </div>
+        `;
+
+    // Scroll to the success message
+    window.scrollTo({
+      top: auditForm.offsetTop - 100,
+      behavior: "smooth",
+    });
+  });
+}
+*/
