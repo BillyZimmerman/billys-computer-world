@@ -50,8 +50,8 @@ section {
 
 section h2 {
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 2rem;
+  margin-bottom: 24px;
+  font-size: 2.2rem;
   color: #122634;
 }
 
@@ -60,6 +60,10 @@ section h2 {
   margin: 0 auto 24px auto;
   padding: 0 50px;
   text-align: center;
+}
+
+ol {
+  padding: 0;
 }
 
 /* Color Schemes ========================================================================================= */
@@ -256,6 +260,12 @@ header h1 {
 }
 
 /* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-options {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 480px) {
   .contact-options {
     gap: 15px;
@@ -369,7 +379,7 @@ header h1 {
 
 @media (max-width: 1023px) {
   .nav-link {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding: 10px 15px;
   }
 }
@@ -654,13 +664,57 @@ header h1 {
   transform: translateY(0) !important;
 }
 
+@media (max-width: 768px) {
+  #pricing .process-steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  #pricing .process-step {
+    margin: 0;
+    min-width: auto;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  #pricing .process-steps {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    padding: 0 20px;
+    margin: 0 0 48px 0;
+  }
+
+  #pricing .process-step {
+    padding: 25px 20px;
+  }
+
+  #pricing .step-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  #pricing .process-step h3 {
+    font-size: 1.2rem;
+    margin: 8px 0;
+  }
+
+  #pricing .process-step p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
 /* price */
 
 /* ============================================================================
    MY DAY JOB DETAILS SECTION
    ============================================================================ */
-.job-details {
-}
 
 .day-job-body {
   max-width: 100%;
@@ -1005,9 +1059,7 @@ p.day-job {
 }
 
 .section h2 {
-  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 40px;
   background: linear-gradient(45deg, #72b1a8, #549a83);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1125,6 +1177,7 @@ p.day-job {
 
   .bullet-list {
     max-width: 100%;
+    padding: 0 12px;
   }
 }
 
@@ -1188,6 +1241,52 @@ p.day-job {
   color: #666;
 }
 
+@media (max-width: 899px) {
+  .service-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    flex: none;
+    min-width: auto;
+    max-width: none;
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-cards,
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    /* max-width: 350px; */
+    padding: 0 20px;
+  }
+
+  .service-card {
+    padding: 25px 20px;
+  }
+
+  .service-card i {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+    margin: 8px 0;
+  }
+
+  .service-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
 /* ============================================================================
    PRICING TICKER SECTION
    ============================================================================ */
@@ -1224,7 +1323,7 @@ p.day-job {
    CALL TO ACTION / PRICING SECTION
    ============================================================================ */
 .call-to-action {
-  background: linear-gradient(90deg, #132534 0%, #02393a 100%) !important;
+  background: linear-gradient(180deg, #132534 0%, #02393a 100%) !important;
 }
 
 .pricing-container {
@@ -1244,8 +1343,6 @@ p.day-job {
 .pricing-section h2,
 .shopify-section h2 {
   color: #f3d24f;
-  margin-bottom: 30px;
-  font-size: 2rem;
 }
 
 .section-divider {
@@ -1332,10 +1429,10 @@ p.day-job {
 }
 
 @media (max-width: 767px) {
-  .pricing-section h2,
+  /* .pricing-section h2,
   .shopify-section h2 {
     font-size: 1.8rem;
-  }
+  } */
 
   .pricing-section,
   .shopify-section {
@@ -1470,12 +1567,11 @@ footer p {
 }
 
 /* Tablet Adjustments - Above 1024px */
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .flip-card-section h2 {
-    font-size: 2rem;
     margin-bottom: 30px;
   }
-}
+} */
 
 @media (max-width: 980px) {
   .cards-container {
@@ -1674,6 +1770,50 @@ footer p {
   .project-item-image {
     height: 120px;
     font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    #process .process-steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    #process .process-step {
+      margin: 0;
+      min-width: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #process .process-steps {
+      grid-template-columns: 1fr;
+      max-width: 350px;
+      padding: 0 20px;
+    }
+
+    #process .process-step {
+      padding: 25px 20px;
+    }
+
+    #process .step-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    #process .process-step h3 {
+      font-size: 1.2rem;
+      margin: 8px 0;
+    }
+
+    #process .process-step p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
   }
 
   /* Mobile Slider Styles */
