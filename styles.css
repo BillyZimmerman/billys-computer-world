@@ -85,7 +85,7 @@ ol {
 }
 
 .color-3 {
-  background: linear-gradient(90deg, #132534 0%, #02393a 100%) !important;
+  background: linear-gradient(160deg, #132534 0%, #02393a 100%) !important;
 }
 
 .color-3 h2 {
@@ -111,10 +111,10 @@ ol {
   background-image: url("assets/img/smile.png");
   background-position: center bottom;
   background-attachment: fixed;
-  background-size: cover; /* Add this for better coverage */
+  background-size: cover;
   background-repeat: no-repeat;
-  filter: blur(5px); /* Adjust blur amount as needed */
-  z-index: -1; /* Put it behind the content */
+  filter: blur(5px);
+  z-index: -1;
 }
 
 .color-6 {
@@ -124,7 +124,7 @@ ol {
 .white-bg {
   position: relative;
   background-image: url("assets/img/computer-bg.png");
-  background-size: cover; /* Add this for better coverage */
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -133,9 +133,9 @@ ol {
    ============================================================================ */
 
 header {
-  background: linear-gradient(90deg, #132534 0%, #02393a 100%);
+  background: linear-gradient(140deg, #132534 0%, #02393a 100%);
   color: white;
-  padding: 100px 20px 60px;
+  padding: 60px 20px 60px;
   position: relative;
 }
 
@@ -172,7 +172,6 @@ header {
 
 .header-text {
   text-align: center;
-  /* flex: 1; */
 }
 
 .header-text h1 {
@@ -642,6 +641,10 @@ header h1 {
   margin: 10px 0;
 }
 
+.process-body {
+  color: #03383b;
+}
+
 .sub-banner-container .process-step {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 8px;
@@ -662,6 +665,7 @@ header h1 {
 .process-step.animated {
   opacity: 1 !important;
   transform: translateY(0) !important;
+  min-height: 375px;
 }
 
 @media (max-width: 768px) {
