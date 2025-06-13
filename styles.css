@@ -1332,7 +1332,7 @@ p.day-job {
 
 .pricing-container {
   display: flex;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   gap: 0;
   align-items: stretch;
@@ -1380,16 +1380,18 @@ p.day-job {
   margin-bottom: 12px;
   padding-left: 20px;
   position: relative;
+  border-bottom: solid 1px #f3d24f;
 }
 
 .pricing-list li::before,
 .shopify-benefits li::before {
-  content: "•";
+  /* content: "•";
   color: #f3d24f;
   font-weight: bold;
   position: absolute;
   left: 0;
-  font-size: 1.2em;
+  font-size: 1.2em; */
+  display: none;
 }
 
 .pricing-intro,
