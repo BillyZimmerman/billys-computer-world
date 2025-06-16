@@ -714,8 +714,6 @@ header h1 {
   }
 }
 
-/* price */
-
 /* ============================================================================
    MY DAY JOB DETAILS SECTION
    ============================================================================ */
@@ -1063,6 +1061,7 @@ p.day-job {
 }
 
 .section h2 {
+  font-size: 48px !important;
   font-weight: 700;
   background: linear-gradient(45deg, #72b1a8, #549a83);
   -webkit-background-clip: text;
@@ -1073,7 +1072,12 @@ p.day-job {
 }
 
 .section:hover h2 {
-  animation: bounceAndPulse 1.2s ease-out forwards;
+  animation: bounceAndPulse 1.5s ease-out forwards;
+}
+
+.section:hover {
+  background: #132534;
+  transition: all 2s ease-in-out;
 }
 
 @keyframes bounceAndPulse {
@@ -1218,8 +1222,8 @@ p.day-job {
   border-radius: 8px;
   padding: 24px;
   flex: 1;
-  min-width: 200px;
-  max-width: 250px;
+  min-width: 320px;
+  max-width: 320px;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
@@ -1365,6 +1369,8 @@ p.day-job {
 
 .pricing-details-text {
   color: #f3d24f;
+  text-align: center;
+  padding: 0 24px;
 }
 
 .pricing-list,
@@ -1377,10 +1383,19 @@ p.day-job {
 
 .pricing-list li,
 .shopify-benefits li {
-  margin-bottom: 12px;
-  padding-left: 20px;
+  padding: 10px 0;
   position: relative;
-  border-bottom: solid 1px #f3d24f;
+}
+
+.pricing-list li::after,
+.shopify-benefits li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0; /* Start from left edge */
+  width: 100%; /* Adjust this percentage to control border width */
+  height: 1px;
+  background-color: #f3d24f;
 }
 
 .pricing-list li::before,
@@ -1446,7 +1461,7 @@ p.day-job {
   }
 
   .body.pricing-details-text {
-    padding: 0 15px;
+    padding: 0 24px;
   }
 }
 
