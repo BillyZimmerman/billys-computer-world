@@ -50,7 +50,7 @@ section {
 
 section h2 {
   text-align: center;
-  margin-bottom: 24px;
+  margin: 0 0 24px 0;
   font-size: 2.2rem;
   color: #122634;
 }
@@ -668,7 +668,20 @@ header h1 {
   min-height: 375px;
 }
 
+/* Update your existing media query for 1024px and below */
+@media (max-width: 1024px) {
+  .pricing-container {
+    flex-direction: column;
+    gap: 0;
+    max-width: 800px !important; /* Use !important to override */
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 768px) {
+  .pricing-container {
+    max-width: 650px !important; /* Further constrain on mobile */
+  }
   #pricing .process-steps {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -682,9 +695,29 @@ header h1 {
     min-width: auto;
     min-height: 300px;
   }
+
+  .pricing-list li,
+  .shopify-benefits li {
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .pricing-list strong,
+  .shopify-section strong {
+    display: block;
+  }
 }
 
 @media (max-width: 480px) {
+  .pricing-container {
+    max-width: 400px !important; /* Further constrain on mobile */
+  }
+
+  .pricing-section,
+  .shopify-section {
+    padding: 0 !important;
+  }
+
   #pricing .process-steps {
     grid-template-columns: 1fr;
     max-width: 350px;
@@ -1069,6 +1102,7 @@ p.day-job {
   background-clip: text;
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transform-origin: center;
+  margin-top: 0;
 }
 
 .section:hover h2 {
@@ -1196,7 +1230,7 @@ p.day-job {
 
   .section h2 {
     font-size: 1.8rem;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
   }
 
   .bullet-list li {
@@ -1370,7 +1404,7 @@ p.day-job {
 .pricing-details-text {
   color: #f3d24f;
   text-align: center;
-  padding: 0 24px;
+  padding: 0;
 }
 
 .pricing-list,
@@ -1423,7 +1457,7 @@ p.day-job {
 }
 
 /* Tablet and Mobile Responsive */
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   .pricing-container {
     flex-direction: column;
     gap: 0;
@@ -1461,7 +1495,7 @@ p.day-job {
   }
 
   .body.pricing-details-text {
-    padding: 0 24px;
+    padding: 0;
   }
 }
 
