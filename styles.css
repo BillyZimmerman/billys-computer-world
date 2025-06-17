@@ -604,6 +604,29 @@ header h1 {
   line-height: 1.6;
 }
 
+@media (max-width: 480px) {
+  .about-me-container {
+    height: 290px;
+    margin-bottom: 80px !important; /* Force the margin */
+    display: block;
+    position: relative;
+  }
+
+  .card,
+  .front,
+  .back p {
+    min-height: 300px;
+  }
+  .back p {
+    padding: 24px;
+  }
+
+  /* Reset any transforms that might be causing overlap */
+  .card {
+    /* transform: none !important; */
+    position: relative !important;
+  }
+}
 /* ============================================================================
    PROCESS SECTION
    ============================================================================ */
