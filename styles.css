@@ -48,6 +48,10 @@ section {
   margin: 0 !important;
 }
 
+.sub-banner-container section {
+  padding-top: 60px !important;
+}
+
 section h2 {
   text-align: center;
   margin: 0 0 24px 0;
@@ -64,6 +68,15 @@ section h2 {
 
 ol {
   padding: 0;
+}
+
+@media (max-width: 767px) {
+  h2 {
+    font-size: 24px !important;
+  }
+  p {
+    font-size: 14px !important;
+  }
 }
 
 /* Color Schemes ========================================================================================= */
@@ -378,8 +391,8 @@ header h1 {
 
 @media (max-width: 1023px) {
   .nav-link {
-    font-size: 0.9rem;
-    padding: 10px 15px;
+    font-size: 16px;
+    padding: 10px;
   }
 }
 @media (max-width: 700px) {
@@ -454,60 +467,6 @@ header h1 {
 }
 
 /* ============================================================================
-      HOW I CAN HELP YOUR BUSINESS SECTION
-   ============================================================================ */
-
-.sub-banner-container {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  background-color: transparent;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.03);
-}
-
-.sub-banner-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    to right,
-    #ffffff,
-    #f0f4f8,
-    #e6eef9,
-    #dae6f7,
-    #e6eef9,
-    #f0f4f8,
-    #ffffff
-  );
-  background-size: 400% 100%;
-  z-index: -1;
-  animation: gradientMovementLinear 15s ease infinite;
-}
-
-.sub-banner-container .flip-card-section {
-  background-color: transparent;
-  padding-bottom: 40px;
-  padding-top: 60px;
-}
-
-.sub-banner-container .process-section {
-  padding-top: 0;
-}
-
-.sub-banner-container .process-section::before {
-  content: "";
-  height: 1px;
-  background: rgba(114, 177, 168, 0.2);
-  width: 80%;
-  max-width: 800px;
-  margin: 0 auto 40px;
-  display: block;
-}
-
-/* ============================================================================
    HOW I CAN HELP YOUR BUSINESS SECTION
    ============================================================================ */
 
@@ -522,7 +481,7 @@ header h1 {
   flex-wrap: nowrap;
   margin-top: 30px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
   gap: 20px;
@@ -606,25 +565,40 @@ header h1 {
 
 @media (max-width: 480px) {
   .about-me-container {
-    height: 290px;
-    margin-bottom: 80px !important; /* Force the margin */
+    flex: 0 0 calc(100vw - 60px); /* Use more of the available width */
+    height: calc(100vw - 60px); /* Make it perfectly square */
+    max-height: 300px; /* Increased max height */
+    width: calc(100vw - 60px);
+    max-width: 300px !important; /* Increased max width */
+    margin: 0 5px 20px; /* Reduced side margins */
     display: block;
     position: relative;
   }
 
-  .card,
-  .front,
-  .back p {
-    min-height: 300px;
-  }
-  .back p {
-    padding: 24px;
+  .card {
+    position: relative !important;
   }
 
-  /* Reset any transforms that might be causing overlap */
-  .card {
-    /* transform: none !important; */
-    position: relative !important;
+  .front,
+  .back {
+    padding: 18px; /* Increased padding for larger cards */
+  }
+
+  .front i {
+    font-size: 2.4rem; /* Increased icon size */
+    margin-bottom: 12px;
+  }
+
+  .front h3 {
+    font-size: 1.25rem; /* Increased title size */
+    margin: 10px 0;
+  }
+
+  .back p {
+    font-size: 0.9rem; /* Increased text size */
+    line-height: 1.4;
+    margin: 0;
+    padding: 0; /* Remove conflicting padding */
   }
 }
 /* ============================================================================
@@ -1555,7 +1529,7 @@ footer p {
 
   .about-me-container {
     width: 260px;
-    flex: 0 0 260px;
+    /* flex: 0 0 260px; */
   }
 
   .project-card-link {
@@ -1644,13 +1618,6 @@ footer p {
   }
 }
 
-/* Tablet Adjustments - Above 1024px */
-/* @media (max-width: 1024px) {
-  .flip-card-section h2 {
-    margin-bottom: 30px;
-  }
-} */
-
 @media (max-width: 980px) {
   .cards-container {
     flex-wrap: wrap;
@@ -1674,7 +1641,7 @@ footer p {
   }
 }
 
-/* Small Tablet/Mobile Slider Functionality */
+/* UPDATED MOBILE SLIDER FUNCTIONALITY - Cards tightened up and made more square */
 @media (max-width: 600px) {
   .slider-container {
     position: relative;
@@ -1685,34 +1652,35 @@ footer p {
   .cards-container {
     display: flex;
     transition: transform 0.3s ease;
-    gap: 20px;
+    gap: 15px; /* Reduced from 20px */
     padding: 0 10px;
   }
 
   .about-me-container {
-    flex: 0 0 300px;
-    height: 280px;
+    flex: 0 0 280px; /* Reduced from 300px */
+    height: 280px; /* Made it square - same as width */
+    width: 280px;
   }
 
   .slider-nav {
     display: flex !important;
     justify-content: center;
     gap: 15px;
-    margin-top: 30px;
+    margin-top: 20px; /* Reduced from 30px */
   }
 
   .nav-btn {
     background: rgba(255, 255, 255, 0.2);
     border: 2px solid rgba(255, 255, 255, 0.5);
     color: white;
-    width: 50px;
-    height: 50px;
+    width: 45px; /* Reduced from 50px */
+    height: 45px; /* Reduced from 50px */
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Reduced from 1.2rem */
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
   }
@@ -1731,13 +1699,13 @@ footer p {
   .slider-dots {
     display: flex !important;
     justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 8px; /* Reduced from 10px */
+    margin-top: 15px; /* Reduced from 20px */
   }
 
   .dot {
-    width: 12px;
-    height: 12px;
+    width: 10px; /* Reduced from 12px */
+    height: 10px; /* Reduced from 12px */
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.4);
     cursor: pointer;
@@ -1747,6 +1715,28 @@ footer p {
   .dot.active {
     background: white;
     transform: scale(1.2);
+  }
+
+  /* Card content adjustments */
+  .front,
+  .back {
+    padding: 16px; /* Reduced from default padding */
+  }
+
+  .front i {
+    font-size: 2.2rem; /* Reduced from 2.5rem */
+    margin-bottom: 12px; /* Reduced from 15px */
+  }
+
+  .front h3 {
+    font-size: 1.2rem; /* Slightly reduced */
+    margin: 8px 0; /* Reduced margins */
+  }
+
+  .back p {
+    font-size: 0.88rem; /* Slightly reduced from 0.9rem */
+    line-height: 1.4; /* Tightened line height */
+    margin: 0; /* Remove default margins */
   }
 }
 
@@ -1904,44 +1894,7 @@ footer p {
     margin-bottom: 25px;
   }
 
-  .cards-container {
-    gap: 15px;
-    padding: 0 15px;
-  }
-
-  .about-me-container {
-    flex: 0 0 calc(100vw - 80px);
-    height: 250px;
-  }
-
-  .front,
-  .back {
-    padding: 20px;
-  }
-
-  .front i {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-  }
-
-  .front h3 {
-    font-size: 1.3rem;
-  }
-
-  .back p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .nav-btn {
-    width: 45px;
-    height: 45px;
-    font-size: 1rem;
-  }
-
-  .slider-nav {
-    margin-top: 20px;
-  }
+  /* Remove old mobile slider styles here since they're replaced above */
 
   .text-ticker {
     font-size: 1.5rem;
@@ -1953,7 +1906,7 @@ footer p {
   }
 }
 
-/* Small Mobile */
+/* UPDATED SMALL MOBILE - Cards made even more compact */
 @media (max-width: 480px) {
   .page-width {
     padding: 0.25rem;
@@ -1969,9 +1922,11 @@ footer p {
   }
 
   .about-me-container {
-    flex: 0 1 300px;
-    width: 300px;
-    margin: 0 5px 20px;
+    flex: 0 0 calc(100vw - 70px); /* Adjusted calculation */
+    height: calc(100vw - 70px); /* Make it square based on available width */
+    max-height: 260px; /* Set maximum height to prevent too tall cards */
+    width: calc(100vw - 70px);
+    max-width: 260px; /* Set maximum width */
   }
 
   .project-container {
@@ -1999,360 +1954,46 @@ footer p {
   }
 
   /* Extra small mobile slider */
-  .about-me-container {
-    flex: 0 0 calc(100vw - 60px);
-    height: 220px;
-  }
-
   .cards-container {
-    padding: 0 10px;
+    gap: 12px; /* Further reduced gap */
+    padding: 0 8px; /* Reduced padding */
   }
 
   .front,
   .back {
-    padding: 15px;
+    padding: 12px; /* Further reduced padding */
   }
 
   .front i {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 2rem; /* Further reduced */
+    margin-bottom: 8px; /* Further reduced */
   }
 
   .front h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Further reduced */
+    margin: 6px 0; /* Further reduced margins */
   }
 
   .back p {
-    font-size: 0.85rem;
+    font-size: 0.82rem; /* Further reduced */
+    line-height: 1.35; /* Even tighter line height */
+  }
+
+  .nav-btn {
+    width: 40px; /* Further reduced */
+    height: 40px; /* Further reduced */
+    font-size: 1rem; /* Further reduced */
+  }
+
+  .slider-nav {
+    margin-top: 15px; /* Reduced */
+  }
+
+  .slider-dots {
+    margin-top: 12px; /* Reduced */
   }
 
   .text-ticker {
     font-size: 1.2rem;
   }
 }
-
-/* ============================================================================
-   UNUSED STYLES - COMMENTED OUT
-   ============================================================================ */
-
-/* CONTACT FORM STYLES - Currently not used since contact form is commented out in HTML */
-/*
-.contact {
-  background: #f0f4f8;
-  padding: 80px 20px;
-}
-
-.contact-intro {
-  text-align: center;
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-  color: #2a5579;
-}
-
-.contact-container {
-  display: flex;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 40px;
-  align-items: flex-start;
-}
-
-.contact-form {
-  flex: 2;
-  background: white;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group.full-width {
-  grid-column: 1 / -1;
-}
-
-.contact-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: 600;
-  color: #2a5579;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid #e0e6ed;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #72b1a8;
-}
-
-.submit-button {
-  background: #72b1a8;
-  color: white;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 6px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  grid-column: 1 / -1;
-  justify-self: start;
-}
-
-.submit-button:hover {
-  background: #549a83;
-  transform: translateY(-2px);
-}
-
-.contact-info {
-  flex: 1;
-  padding: 20px;
-}
-
-.contact-info h3 {
-  color: #2a5579;
-  margin-bottom: 20px;
-}
-
-.contact-info p {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.contact-info i {
-  margin-right: 10px;
-  color: #e05e54;
-  width: 20px;
-}
-
-.contact-info a {
-  color: #2a5579;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  color: #e05e54;
-}
-
-.social-links {
-  margin-top: 30px;
-}
-
-.social-links a {
-  display: inline-block;
-  margin-right: 15px;
-  color: #72b1a8;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: #549a83;
-}
-
-.success-message {
-  text-align: center;
-  padding: 40px;
-  background: #f8fff9;
-  border: 2px solid #72b1a8;
-  border-radius: 8px;
-}
-
-.success-message h3 {
-  color: #2a5579;
-  margin-bottom: 15px;
-}
-
-.success-message p {
-  color: #666;
-  line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-  }
-
-  .contact-form {
-    grid-template-columns: 1fr;
-    padding: 30px 20px;
-  }
-}
-*/
-
-/* TESTIMONIALS SECTION STYLES - Currently not used since testimonials section is commented out in HTML */
-/*
-.testimonials {
-  background: #f0f4f8;
-}
-
-.testimonial-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-.testimonial {
-  background: white;
-  border-radius: 8px;
-  padding: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  max-width: 500px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.testimonial:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.quote {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.quote i.fa-quote-left {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  color: #e05e54;
-  opacity: 0.3;
-  font-size: 1.5rem;
-}
-
-.quote i.fa-quote-right {
-  position: absolute;
-  bottom: -10px;
-  right: -10px;
-  color: #e05e54;
-  opacity: 0.3;
-  font-size: 1.5rem;
-}
-
-.quote p {
-  margin: 0;
-  font-style: italic;
-  padding: 10px;
-}
-
-.author {
-  display: flex;
-  align-items: center;
-}
-
-.author-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #72b1a8;
-  margin-right: 15px;
-  background-size: cover;
-  background-position: center;
-}
-
-.author-info h4 {
-  margin: 0;
-  color: #2a5579;
-}
-
-.author-info p {
-  margin: 5px 0 0;
-  color: #666;
-  font-size: 0.9rem;
-}
-*/
-
-/* SKILLS SECTION STYLES - Currently not used since skills section is commented out in HTML */
-/*
-.skills-section {
-  background: white;
-}
-
-.skill-categories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
-}
-
-.skill-category {
-  min-width: 250px;
-  text-align: center;
-}
-
-.skill-category h3 {
-  color: #2a5579;
-  margin-bottom: 15px;
-}
-
-.skill-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.skill-badges span {
-  background: #f0f4f8;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.skill-badges span i {
-  margin-right: 5px;
-  color: #e05e54;
-}
-*/
-
-/* LOCAL BUSINESS EMPHASIS STYLES - Already commented out with "NOT USING ATM" */
-/*
-.local-highlight {
-  position: relative;
-  display: inline-block;
-}
-
-.local-highlight::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #f3d24f;
-  border-radius: 1.5px;
-}
-
-.location-badge {
-  display: inline-block;
-  background-color: rgba(114, 177, 168, 0.15);
-  color: #2a5579;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  margin-left: 0.5rem;
-  border: 1px solid rgba(114, 177, 168, 0.3);
-}
-*/
