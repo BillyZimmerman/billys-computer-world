@@ -48,9 +48,9 @@ section {
   margin: 0 !important;
 }
 
-.sub-banner-container section {
+/* .sub-banner-container section {
   padding-top: 60px !important;
-}
+} */
 
 section h2 {
   text-align: center;
@@ -139,6 +139,12 @@ ol {
   background-image: url("assets/img/computer-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 480px) {
+  .color-5::before {
+    filter: none;
+  }
 }
 
 /* ============================================================================
@@ -1298,6 +1304,10 @@ p.day-job {
 }
 
 @media (max-width: 480px) {
+  section#my-services {
+    padding-bottom: 60px;
+  }
+
   .service-cards,
   .cards {
     grid-template-columns: 1fr;
