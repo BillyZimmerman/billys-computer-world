@@ -1909,7 +1909,7 @@ footer p {
 /* UPDATED SMALL MOBILE - Cards made even more compact */
 @media (max-width: 480px) {
   .page-width {
-    padding: 0.25rem;
+    padding: 0;
   }
 
   .header-text h1 {
