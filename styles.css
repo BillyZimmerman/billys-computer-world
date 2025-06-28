@@ -55,7 +55,7 @@ section {
 section h2 {
   text-align: center;
   margin: 0 0 24px 0;
-  font-size: 2.2rem;
+  font-size: 50px;
   color: #122634;
 }
 
@@ -72,10 +72,13 @@ ol {
 
 @media (max-width: 767px) {
   h2 {
-    font-size: 24px !important;
+    font-size: 26px !important;
+  }
+  h3 {
+    font-size: 20px;
   }
   p {
-    font-size: 14px !important;
+    font-size: 16px !important;
   }
 }
 
@@ -552,7 +555,6 @@ header h1 {
 
 .card .front h3 {
   margin: 10px 0 0;
-  font-size: 1.3rem;
 }
 
 .card .back {
@@ -762,6 +764,7 @@ header h1 {
 p.day-job {
   margin-bottom: 0;
   padding-bottom: 12px;
+  font-weight: bold;
 }
 
 /* ============================================================================
@@ -797,7 +800,7 @@ p.day-job {
 
 .projects .project-container p {
   color: #122634;
-  min-height: 92px;
+  min-height: 135px;
 }
 
 .project-card-link {
@@ -849,7 +852,7 @@ p.day-job {
 }
 
 .project-content {
-  padding: 18px;
+  padding: 12px;
 }
 
 .project-content h3 {
@@ -1313,7 +1316,7 @@ p.day-job {
     grid-template-columns: 1fr;
     gap: 20px;
     /* max-width: 350px; */
-    padding: 0 20px;
+    /* padding: 0 20px; */
   }
 
   .service-card {
@@ -1884,7 +1887,6 @@ footer p {
     }
 
     #process .process-step h3 {
-      font-size: 1.2rem;
       margin: 8px 0;
     }
 
