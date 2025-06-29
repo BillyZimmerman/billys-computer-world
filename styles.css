@@ -59,6 +59,19 @@ section h2 {
   color: #122634;
 }
 
+h3 {
+  font-size: 34px;
+}
+
+h4 {
+  font-size: 22px;
+  color: #053438;
+}
+
+p {
+  font-size: 18px !important;
+}
+
 .body {
   max-width: 1100px;
   margin: 0 auto 24px auto;
@@ -280,6 +293,12 @@ header h1 {
   color: #fff;
 }
 
+@media (max-width: 1023px) {
+  .header-text .subtitle,
+  .contact-item {
+    font-size: 16px;
+  }
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .contact-options {
@@ -360,7 +379,7 @@ header h1 {
   color: #122434;
   text-decoration: none;
   padding: 18px 24px;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.1rem;
   transition: all 0.3s ease;
   border-bottom: 3px solid transparent;
@@ -392,24 +411,30 @@ header h1 {
 .nav-menu.mobile-open {
   display: flex;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1101px) {
   .nav-link {
-    font-size: 1.1rem;
+    font-size: 18px;
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1100px) {
   .nav-link {
-    font-size: 16px;
+    font-size: 15px;
     padding: 10px;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 768px) {
+  .nav-link {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 750px) {
   .nav-menu {
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -557,6 +582,57 @@ header h1 {
   margin: 10px 0 0;
 }
 
+.click-hint {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+  font-style: italic;
+  margin-top: 8px;
+  display: inline-block;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+
+  /* Button styling */
+  padding: 4px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 400;
+}
+
+/* Hover effect for the button */
+.click-hint:hover {
+  color: rgba(0, 0, 0, 0.7);
+  border-color: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Optional: Add a subtle animation to make it more noticeable */
+.click-hint {
+  animation: subtle-pulse 3s infinite;
+}
+
+@keyframes subtle-pulse {
+  0%,
+  100% {
+    border-color: rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    border-color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* Hide the hint on mobile if cards auto-flip on touch */
+@media (max-width: 768px) {
+  .click-hint {
+    display: none;
+  }
+}
+
 .card .back {
   background: #02393a;
   color: white;
@@ -673,6 +749,10 @@ header h1 {
   min-height: 375px;
 }
 
+.pricing-container h3 {
+  color: #f3d24f;
+}
+
 /* Update your existing media query for 1024px and below */
 @media (max-width: 1024px) {
   .pricing-container {
@@ -716,6 +796,12 @@ header h1 {
 @media (max-width: 480px) {
   .pricing-container {
     max-width: 400px !important; /* Further constrain on mobile */
+  }
+  .process-steps {
+    flex-direction: column !important;
+    align-items: center;
+    display: flex !important
+;
   }
 
   .pricing-section,
@@ -852,6 +938,7 @@ p.day-job {
 }
 
 .project-content {
+  min-height: 310px;
   padding: 12px;
 }
 
@@ -1306,6 +1393,23 @@ p.day-job {
   }
 }
 
+@media (max-width: 768px) {
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .process-step {
+    flex: none;
+    min-width: auto;
+    max-width: none;
+  }
+}
+
 @media (max-width: 480px) {
   section#my-services {
     padding-bottom: 60px;
@@ -1608,7 +1712,7 @@ footer p {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 25px;
+    gap: 62px;
     max-width: 700px;
     margin: 0 auto 40px;
     padding: 0;
@@ -1617,7 +1721,7 @@ footer p {
   }
 
   .project-card-link {
-    width: 300px;
+    width: 400px;
     flex: none;
   }
 
@@ -1759,9 +1863,9 @@ footer p {
     padding: 0 12px;
   }
 
-  .page-width {
+  /* .page-width {
     padding: 0.25rem;
-  }
+  } */
 
   section {
     padding: 40px 15px;
@@ -1877,6 +1981,10 @@ footer p {
 
     #process .process-step {
       padding: 25px 20px;
+    }
+
+    .header-text .subtitle {
+      padding: 0 30px;
     }
 
     #process .step-icon {
