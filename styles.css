@@ -631,13 +631,6 @@ header h1 {
   }
 }
 
-/* Hide the hint on mobile if cards auto-flip on touch */
-@media (max-width: 768px) {
-  .click-hint {
-    display: none;
-  }
-}
-
 .card .back {
   background: #02393a;
   color: white;
@@ -655,10 +648,9 @@ header h1 {
 @media (max-width: 480px) {
   .about-me-container {
     flex: 0 0 calc(100vw - 60px); /* Use more of the available width */
-    height: calc(100vw - 60px); /* Make it perfectly square */
-    max-height: 300px; /* Increased max height */
+    height: 350px;
     width: calc(100vw - 60px);
-    max-width: 300px !important; /* Increased max width */
+    /* max-width: 300px !important;  */
     margin: 0 5px 20px; /* Reduced side margins */
     display: block;
     position: relative;
@@ -1155,6 +1147,12 @@ p.day-job {
   font-size: 0.9rem;
   color: #666;
   line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  .popup-header h2 {
+    font-size: 24px !important;
+  }
 }
 
 /* GOALS & EXPECTATIONS ============================================================================================== */
@@ -2052,10 +2050,8 @@ footer p {
 
   .about-me-container {
     flex: 0 0 calc(100vw - 70px); /* Adjusted calculation */
-    height: calc(100vw - 70px); /* Make it square based on available width */
-    max-height: 260px; /* Set maximum height to prevent too tall cards */
+    height: 325px;
     width: calc(100vw - 70px);
-    max-width: 260px; /* Set maximum width */
   }
 
   .project-container {
