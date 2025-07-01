@@ -1903,8 +1903,8 @@ footer p {
   }
 
   .header-image img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
 
   .subtitle {
@@ -2045,10 +2045,10 @@ footer p {
     font-size: 2rem;
   }
 
-  .header-image img {
+  /* .header-image img {
     width: 120px;
     height: 120px;
-  }
+  } */
 
   .about-me-container {
     flex: 0 0 calc(100vw - 70px); /* Adjusted calculation */
