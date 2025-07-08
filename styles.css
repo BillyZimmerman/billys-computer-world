@@ -97,9 +97,9 @@ ol {
 }
 
 @media (max-width: 480px) {
-  h2 {
+  /* h2 {
     font-size: 24px !important;
-  }
+  } */
   p {
     font-size: 15px !important;
   }
@@ -579,6 +579,15 @@ header h1 {
   margin: 10px 0 0;
 }
 
+.back h4 {
+  color: #f3d24f;
+  margin: 12px 0;
+}
+
+.back p {
+  font-size: 16px !important;
+}
+
 .click-hint {
   font-size: 12px;
   color: rgba(0, 0, 0, 0.5);
@@ -654,24 +663,24 @@ header h1 {
 
   .front,
   .back {
-    padding: 18px; /* Increased padding for larger cards */
+    padding: 18px; 
   }
 
   .front i {
-    font-size: 2.4rem; /* Increased icon size */
+    font-size: 2.4rem; =
     margin-bottom: 12px;
   }
 
   .front h3 {
-    font-size: 1.25rem; /* Increased title size */
+    font-size: 1.25rem; 
     margin: 10px 0;
   }
 
   .back p {
-    font-size: 0.9rem; /* Increased text size */
+    font-size: 15px!important; 
     line-height: 1.4;
     margin: 0;
-    padding: 0; /* Remove conflicting padding */
+    padding: 0;
   }
 }
 /* ============================================================================
@@ -735,7 +744,7 @@ header h1 {
 .process-step.animated {
   opacity: 1 !important;
   transform: translateY(0) !important;
-  min-height: 375px;
+  /* min-height: 375px; */
 }
 
 .pricing-container h3 {
@@ -1483,11 +1492,11 @@ p.day-job {
 }
 
 .pricing-container {
-  display: flex;
-  max-width: 1500px;
+  /* display: flex; */
+  max-width: 800px;
   margin: 0 auto;
-  gap: 0;
-  align-items: stretch;
+  /* gap: 0;
+  align-items: stretch; */
 }
 
 .shopify-section {
