@@ -1,5 +1,3 @@
-// main.js - JavaScript for Billy Zimmerman's portfolio website
-
 document.addEventListener("DOMContentLoaded", function () {
   // Flip cards on click
   document.querySelectorAll(".card").forEach((card) => {
@@ -8,7 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // FLIP CARDS SLIDER JS ============================================================
+  // UNUSED CODE - COMMENTED OUT FOR PERFORMANCE
+  // ============================================
+  // FLIP CARDS SLIDER JS - This was looking for DOM elements that don't exist in your HTML
+  /*
   class FlipCardSlider {
     constructor() {
       this.container = document.getElementById("cardsContainer");
@@ -157,10 +158,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Initialize the slider when DOM is loaded
-  document.addEventListener("DOMContentLoaded", () => {
-    new FlipCardSlider();
-  });
+  // Initialize the slider when DOM is loaded - COMMENTED OUT BECAUSE NOT NEEDED
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   new FlipCardSlider();
+  // });
+  */
 
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -208,8 +210,8 @@ document.addEventListener("DOMContentLoaded", function () {
   handleScroll(); // Check on page load
 });
 
-// RECENT PROJECT - POP UP FUNCTIONALITY ============================================
-// Sample project data - replace with your actual projects
+// RECENT PROJECT - POP UP FUNCTIONALITY
+// Sample project data
 const projects = [
   {
     name: "Merch Mountain",
@@ -279,23 +281,33 @@ const popupOverlay = document.getElementById("popupOverlay");
 const closeBtn = document.getElementById("closeBtn");
 const projectGrid = document.getElementById("projectGrid");
 
-// Generate project grid
+// Generate project grid with lazy loading
 function generateProjectGrid() {
   projectGrid.innerHTML = "";
-  projects.forEach((project, index) => {
+  projects.forEach((project) => {
+    // Removed unused index parameter for performance
     const projectItem = document.createElement("a");
     projectItem.className = "project-item";
     projectItem.href = project.url;
     projectItem.target = "_blank";
     projectItem.rel = "noopener noreferrer";
 
+    // Using img element with lazy loading instead of background image
     projectItem.innerHTML = `
-            <div class="project-item-image" style="background-image: url('${project.image}')">
-            </div>
-            <div class="project-item-content">
-              <h3>${project.name}</h3>
-            </div>
-          `;
+      <div class="project-item-image">
+        <img 
+          src="${project.image}" 
+          alt="${project.name} website screenshot"
+          loading="lazy"
+          decoding="async"
+          onload="this.style.opacity='1'"
+          style="opacity: 0; transition: opacity 0.3s ease;"
+        >
+      </div>
+      <div class="project-item-content">
+        <h3>${project.name}</h3>
+      </div>
+    `;
 
     projectGrid.appendChild(projectItem);
   });
@@ -332,15 +344,18 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// Prevent body scroll when popup is open
+// UNUSED CODE - COMMENTED OUT FOR PERFORMANCE
+// ============================================
+// Prevent body scroll when popup is open - This was redundant
+/*
 window.addEventListener("resize", () => {
   if (popupOverlay.classList.contains("active")) {
     document.body.style.overflow = "hidden";
   }
 });
+*/
 
-// TEXT TICKER JS ====================================================================
-// JavaScript to ensure seamless scrolling and handle hover pause
+// TEXT TICKER FUNCTIONALITY
 document.addEventListener("DOMContentLoaded", function () {
   const tickerContainer = document.querySelector(".pricing-ticker-container");
   const tickerWrapper = document.querySelector(".ticker-wrapper");
@@ -396,45 +411,3 @@ document.addEventListener("DOMContentLoaded", function () {
     tickerWrapper.style.animationPlayState = "running";
   }, 100);
 });
-
-/* ============================================================================
-   UNUSED JAVASCRIPT CODE - COMMENTED OUT
-   ============================================================================ */
-
-/* FORM SUBMISSION CODE - Currently not used since contact form is commented out in HTML */
-/*
-// Form submission with basic validation and feedback
-const auditForm = document.getElementById("audit-form");
-if (auditForm) {
-  auditForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // Simple validation
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const business = document.getElementById("business").value;
-
-    if (!name || !email || !business) {
-      alert("Please fill out all required fields.");
-      return;
-    }
-
-    // Normally, you would send this data to your server
-    // For demo purposes, we'll just show a success message
-    auditForm.innerHTML = `
-            <div class="success-message">
-                <i class="fas fa-check-circle" style="font-size: 3rem; color: #72b1a8; margin-bottom: 1rem;"></i>
-                <h3>Thank You, ${name}!</h3>
-                <p>Your website audit request has been submitted. I'll analyze your website and get back to you within 1-2 business days with insights and recommendations.</p>
-                <p style="margin-top: 1rem;">Meanwhile, feel free to check out my <a href="#projects" style="color: #e05e54;">recent projects</a>.</p>
-            </div>
-        `;
-
-    // Scroll to the success message
-    window.scrollTo({
-      top: auditForm.offsetTop - 100,
-      behavior: "smooth",
-    });
-  });
-}
-*/
